@@ -1,7 +1,6 @@
 from collections import Counter , defaultdict
 import sys
 # *************** Problem 1: Basic Log File Reader ****************
-# Ye script log file ko read karta hai aur uska content console par print karta hai.
 
 # def read_log_file(file_path):
 #     with open(file_path, 'r') as f:
@@ -10,8 +9,8 @@ import sys
 
 # read_log_file('server.log')            
 
-# *************** Problem 2: Log File Parsing ****************
-# ab ye script log file ko read karta hai aur uska content formatted manner mein print karta hai.
+# *************** Problem 2: Log File Parsing *****************
+
 
 # def read_log_file(file_path):
 #     with open(file_path,'r') as f:
@@ -22,8 +21,6 @@ import sys
 # read_log_file('server.log')        
 
 # *************** Problem 3: Log File Analysis ****************
-# Uske bad ye script log file read kar ke lines parts ko variable mei store karta hai.
-
 # def read_log_file(file_path):
 #     with open(file_path,'r') as f:
 #         for line in f:
@@ -41,21 +38,16 @@ import sys
 
 
 # *************** Problem 4: Handling Blank Lines ****************
-# phr ye script log file ko read karta hai aur blank lines ko skip karta hai.
-
 # def read_log_file(file_path):
 #     with open(file_path,'r') as f:
 #         for line in f:
 #             line = line.strip()
-#             # Blank line? Skip karo
 #             if not line:
 #                 continue
 #             parts = line.split(' ')
-#              # Kam parts hain? Kharab line hai tou skip karo
 #             if len(parts) < 6:
-#                 print(f'Khrab line skip karo: {line}')
+#                 print(f'Incomplete line skipped: {line}')
 #                 continue
-#             # Normal processing
 #             timestamp = parts[0]
 #             ip_address = parts[1]
 #             request_method = parts[2]
@@ -67,7 +59,6 @@ import sys
 
 
 # *************** Problem 5: Status Code Counting ****************
-# ye second last script hai jo status codes ka count deta hai aur phr batata hai konsa status code sabse jyada aaya.
 
 # def read_log_file(file_path):
 #     status_counter = Counter()
@@ -78,7 +69,7 @@ import sys
 #                 continue
 #             parts = line.split(' ')
 #             if len(parts) < 6:
-#                 print(f'Incomplete lines skipped: {line}')
+#                 print(f'Incomplete line skipped: {line}')
 #                 continue
 #             timestamp = parts[0]
 #             ip_address = parts[1]
@@ -86,7 +77,6 @@ import sys
 #             request_path = parts[3]
 #             status_code = parts[4]
 #             request_response = parts[5]    
-#             # count status codes within loop
 #             status_counter[status_code] += 1
 
 #             print(f'IP Address: {ip_address} | Request Method: {request_method} | Status Code: {status_code}')
@@ -97,7 +87,6 @@ import sys
 
 
 # *************** Problem 6: Slowest Endpoints ****************
-# ye last script hai jo status codes ka count deta hai, aur phr batata hai konsa status code sabse jyada aaya, aur top 3 slowest endpoints identify karta hai.
 
 # def read_log_file(file_path):
 #     status_counter = Counter()
@@ -109,7 +98,7 @@ import sys
 #                 continue
 #             parts = line.split(' ')
 #             if len(parts) < 6:
-#                 print(f'Incomplete lines skipped: {line}')
+#                 print(f'Incomplete line skipped: {line}')
 #                 continue
 #             timestamp = parts[0]
 #             ip_address = parts[1]
@@ -128,13 +117,11 @@ import sys
 #     print("\n*** Status Code Report ***")
 #     for code, count in status_counter.items():
 #         print(f"Status {code}: {count} time comes")
-#     print("\n*** Top 3 Slowest Endpoints ***")
-#     # extract average times for each path
+#     print("\n Top 3 Slowest Endpoints ")
 #     path_avg = {}
 #     for p, times in path_times.items():
 #         path_avg[p] = sum(times) / len(times)
 
-#     # sort paths by average response time in descending order
 #     sorted_paths = sorted(path_avg.items(), key=lambda x: x[1], reverse=True)
 
 #     for p, avg in sorted_paths[:3]:
